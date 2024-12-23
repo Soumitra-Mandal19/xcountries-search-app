@@ -10,14 +10,9 @@ export const useCountrySearch = (searchText = "") => {
     const [countries, setCountries] = useState([]);
     //Using hook useEffect to fetch the data(list of countries) once as we have empty dependency array and setting it using setter method to Countries state    
     useEffect(() => {
-
         const getData = async () => {
-            try {
                 const data = await getCountries();
                 setCountries(data);
-            } catch (error) {
-                console.error(`Error fetching data: ${error.message}`)
-            }
         }
         getData();
     }, [])
