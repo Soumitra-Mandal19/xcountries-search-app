@@ -12,7 +12,9 @@ export const useCountrySearch = (searchText = "") => {
     useEffect(() => {
         const getData = async () => {
                 const data = await getCountries();
-                setCountries(data);
+                if (data && data.length > 0) {
+                    setCountries(data);
+                }
         }
         getData();
     }, [])
