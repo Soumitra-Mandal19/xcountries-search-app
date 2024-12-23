@@ -1,4 +1,4 @@
-import { fetchData } from "../components/CountriesSearch/api";
+import { getCountries } from "../components/CountriesSearch/api";
 import { useState, useEffect } from "react";
 
 //Created a custom hook named as useCountrySearch which takes searchText as prop which maintains a state of all the countries and
@@ -13,7 +13,7 @@ export const useCountrySearch = (searchText = "") => {
 
         const getData = async () => {
             try {
-                const data = await fetchData();
+                const data = await getCountries();
                 setCountries(data);
             } catch (error) {
                 console.error(`Error fetching data: ${error.message}`)

@@ -22,11 +22,11 @@ export const CountriesSearch = () => {
     return (
         <div>
             <div className={styles.inputContainer}>
-                <input className={styles.input} placeholder="Search for countries" value={searchText} onChange={handleSearchText} />
+                <input type="text" className={styles.input} placeholder="Search for countries" value={searchText} onChange={handleSearchText} />
             </div>
             <div className={styles.mainContainer}>
                 {filteredCountries.map((country) => {
-                    return (<div key={country.name.common} className={styles.flagContainer}>
+                    return (<div key={country.name.common} className={styles.countryCard}>
                         <div> <img className={styles.flagImg} src={country.flags.png} alt={country.name.common} /></div>
                         <div>{country.name.common}</div>
                     </div>
